@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar viaje</title>
+    <!-- CSS bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- JS bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- imports -->
+    <script src="../static/javascript/constants.js"></script> 
+    <script src="../static/javascript/show.js"></script> 
+    <script src="../static/javascript/onchange.js"></script> 
+
+</head>
+<body>
+
+
+<section class="jumbotron text-center">
+<div class="container">
+    <h1 class="jumbotron-heading">Agregar viaje</h1>
+</div>
+</section>
+
+{0}
+
+<div class="container">
+    <div class="d-flex">
+        <div class="col-md-9">
+            <form action="agregar-viaje.py" method="POST" onsubmit="">
+                <div class="form-group">
+                    <script>mostrarPaisesOrigen();</script>
+                    <label for='ciudadOrigen'>Ciudad de origen:</label>
+                    <select class="form-control" id="ciudadOrigen" name="ciudad-origen">
+                        <option selected>Elija ...</option>
+                    </select>
+                    <label for='paisDestino'>País de destino:</label>
+                    <select class="form-control" id="paisDestino" name="pais-destino">
+                        <option selected>Elija ...</option>
+                    </select>
+                    <label for='ciudadDestino'>Ciudad de destino:</label>
+                    <select class="form-control" id="ciudadDestino" name="ciudad-destino">
+                        <option selected>Elija ...</option>
+                    </select>
+                    <label for='fechaIda'>Fecha de ida:</label>
+                    <input type="text" class="form-control" id="fechaIda" name="fecha-ida">
+                    <label for='fechaRegreso'>Fecha de regreso:</label>
+                    <input type="text" class="form-control" id="fechaRegreso" name="fecha-regreso">
+                    <script>mostrarEspacio("disponible");</script>
+                    <script>mostrarKilos("disponibles");</script>
+                    <label for='emailViajero'>Email:</label>
+                    <input type="text" class="form-control" id="emailViajero" name="email">
+                    <label for='numeroViajero'>Número de celular:</label>
+                    <input type="text" class="form-control" id="numeroViajero" name="celular">
+                </div>
+                <button type="submit" class="w3-button w3-right w3-green">Enviar</button>
+            </form>
+            <button class="w3-button w3-left w3-light-grey" onclick="window.location='inicio.py';">Volver</button> 
+            
+        </div>
+        <div class="ml-auto col-md-3">
+            <div id="contenedorErrores" class="contenedor">
+                    {1}   
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
+
+</body>
+</html>
